@@ -102,6 +102,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 btn.parentElement.remove();
                 calcGoods(0);
                 calcTotal();
+                const product = cartWrapper.querySelector('.goods__item');
+                if (product == null) {
+                    const div = document.createElement('div');
+                        div.className = 'empty';
+                        div.innerHTML = 'Ваша корзина пока пуста';
+                        cartWrapper.appendChild(div);
+                }
             });
         });
     }
